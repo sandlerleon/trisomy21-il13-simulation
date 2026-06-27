@@ -1,0 +1,73 @@
+
+================================================================================
+SIMULATION SUMMARY v3.0 — Trisomy 21 IL-13 Blockade Framework
+Run: 2026-06-26 18:00:40
+================================================================================
+
+PHARMACOKINETIC RESULTS
+────────────────────────────────────────────────────────────────────────────────
+Peak maternal concentration:              1.5473 (normalised μg/mL)
+Peak fetal concentration:                 2.0409
+Fetal/maternal ratio — Week 12:          0.000
+Fetal/maternal ratio — Week 24:          0.374
+Fetal/maternal ratio — Week 32:          1.112
+FcRn efficiency — Dose 1 (wk 12):       0.4%
+FcRn efficiency — Dose 2 (wk 24):       17.2%
+FcRn efficiency — Dose 3 (wk 32):       65.8%
+
+MICROGLIAL ACTIVATION (mean, normalised)
+────────────────────────────────────────────────────────────────────────────────
+Period          Euploid    T21 Untreated    T21 Treated    Reduction
+Window I:       10.356      24.508            24.499          0.0%
+Window II:      12.393      31.969            30.368          5.0%
+Window III:     12.393      31.979            25.848          19.2%
+Overall:        11.884      30.088            26.881          10.7%
+Free IL-13:     Overall reduction: 17.3%
+
+DOWNSTREAM NEURODEVELOPMENTAL MARKERS
+────────────────────────────────────────────────────────────────────────────────
+SYNAPTIC DENSITY INDEX (mean, normalised):
+Period          Euploid    T21 Untreated    T21 Treated    Gain
+Window I:       10.164      -1.428            -1.421          0.0%
+Window II:      10.193      -6.225            -4.967          0.0%
+Window III:     10.192      -6.239            -1.383          0.0%
+Overall:        10.187      -5.004            -2.452          0.0%
+
+OLIGODENDROCYTE MATURATION INDEX (mean, normalised):
+Window III:     4.101      -10.339            -5.449          0.0%
+Overall:        2.054      -5.177            -2.446          0.0%
+
+COMPOSITE NEURODEVELOPMENTAL INDEX (NDI, euploid = 100)
+────────────────────────────────────────────────────────────────────────────────
+Period          Euploid    T21 Untreated    T21 Treated    Δ NDI
+Window I:       100.0       17.4             17.4           +0.0
+Window II:      100.0       0.0             0.0           +0.0
+Window III:     100.0       0.0             1.1           +1.1
+Overall:        100.0       5.0             7.2           +2.2
+
+SENSITIVITY ANALYSIS (Monte Carlo n=100, ±20–25% variation in 8 parameters)
+────────────────────────────────────────────────────────────────────────────────
+Microglial reduction positive across ALL samples: YES ✓
+NDI improvement positive across ALL samples:      YES ✓
+Treated NDI 90% CI (overall mean):               [2.4, 14.9]
+Untreated NDI 90% CI (overall mean):             [2.2, 9.1]
+
+RECOMMENDED PAPER WORDING (per reviewer suggestion)
+────────────────────────────────────────────────────────────────────────────────
+"Across the explored parameter space, the computational framework consistently
+predicted reductions in simulated IL-13 signalling and microglial activation,
+as well as improvements in downstream proxy markers of synaptic density and
+oligodendrocyte maturation, supporting the pharmacological feasibility and
+internal consistency of the proposed dosing strategy. Because the model employs
+placeholder parameters rather than experimentally calibrated values, these
+findings should be interpreted as hypothesis-generating rather than predictive."
+
+IMPORTANT CAVEATS
+────────────────────────────────────────────────────────────────────────────────
+• All values are from placeholder-parameter simulation
+• Downstream marker relationships are theoretical (published qualitative
+  associations, not quantitative fits to experimental data)
+• Monte Carlo bands reflect parameter uncertainty, not biological variability
+• Calibration against T21 iPSC organoid, Ts65Dn mouse, and placental
+  perfusion data is required before scientific conclusions can be drawn
+================================================================================
