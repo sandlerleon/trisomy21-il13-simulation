@@ -209,6 +209,13 @@ From the current placeholder-parameter run:
 
 ---
 
+## Paper & Data
+
+Full paper is avilable on Zenodo:
+
+**DOI: [10.5281/zenodo.20945817](https://zenodo.org/records/20945817)**
+
+
 ## Disclaimer
 
 **This simulation does not constitute evidence of clinical efficacy or safety.**
