@@ -3,8 +3,8 @@
 **Companion code to:**
 > *"Neuroinflammatory Vulnerability Windows in Trisomy 21: A Theoretical Framework for Extended-Interval IL-13/TSLP Biologic Intervention During Fetal Neurodevelopment"*
 > Leon Sandler (pen name: Leonid Sandler)
-> Zenodo Preprint, June 2026
-> DOI: *[assigned upon Zenodo upload]*
+> Zenodo Preprint, September 2026 (v4) — revised for Immunobiology major revision
+> DOI: [10.5281/zenodo.20945816](https://doi.org/10.5281/zenodo.20945816)
 
 **Author contact:** leonsandler@alumni.swinburne.edu
 **LinkedIn:** https://www.linkedin.com/in/-leon-sandler
@@ -43,7 +43,7 @@ pip install numpy scipy matplotlib
 ### Run the simulation
 
 ```bash
-python Trisomy21_PBPK_Simulation_v2.py
+python "Trisomy21 PBPK Simulation v3.py"
 ```
 
 This will generate the following files in the same directory:
@@ -54,8 +54,10 @@ This will generate the following files in the same directory:
 | `Fig2_Window_Coverage.png` | Fetal antibody levels vs three vulnerability windows |
 | `Fig3_Microglial_Suppression.png` | Microglial activation: T21 treated vs untreated vs euploid |
 | `Fig4_FcRn_Transfer_Dynamics.png` | FcRn efficiency curve and fetal/maternal ratio over gestation |
-| `Fig5_Sensitivity_Analysis.png` | Monte Carlo uncertainty bands (n=80, ±20–25% parameter variation) |
-| `simulation_summary.txt` | Quantitative results table |
+| `Fig5_Sensitivity_Analysis.png` | Monte Carlo uncertainty bands (n=100, ±20–25% parameter variation) |
+| `Fig6_Neurodevelopmental_Markers.png` | Synaptic density and oligodendrocyte maturation proxies |
+| `Fig7_Composite_NDI.png` | Composite Neurodevelopmental Index (NDI) by window |
+| `simulation_summary_v3.txt` | Quantitative results table |
 
 Runtime: approximately 30–60 seconds on a standard laptop.
 
@@ -79,8 +81,8 @@ Layer 2: Neuroinflammatory ODE System
                           ↓ 3 scenarios × 5 state variables
 Layer 3: Sensitivity Analysis
   ┌─────────────────────────────────────────────────────────────┐
-  │  Monte Carlo: 80 samples, ±20–25% variation in 6 parameters│
-  │  Output: 5th–95th percentile bands on microglial activation │
+  │  Monte Carlo: 100 samples, ±20–25% variation in 8 parameters│
+  │  Output: 90% CI bands on microglial activation and NDI      │
   └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -190,7 +192,7 @@ conc_from_osp = pk_data['fetal_conc'].values
 
 ## Simulation Results Summary
 
-From the current placeholder-parameter run:
+From the current placeholder-parameter run (deterministic seed, reproducible):
 
 | Metric | Value |
 |--------|-------|
@@ -203,18 +205,24 @@ From the current placeholder-parameter run:
 | Microglial reduction — Window III | ~19% |
 | Microglial reduction — Overall | ~11% |
 | IL-13 free concentration reduction | ~17% |
-| Reduction positive across all sensitivity samples | YES |
+| Composite NDI improvement (ΔNDI, overall) | ~+2.2 (euploid = 100) |
+| Monte Carlo (n=100, 8 parameters): direction positive in all samples | YES |
 
 > The low Window I reduction is **expected and correct** — FcRn transfer is minimal at week 12, so dose 1 acts primarily via maternal cytokine reduction rather than direct fetal drug exposure. This is explicitly discussed in the paper.
+>
+> **These numbers describe the behaviour of an illustrative, placeholder-parameter model, not a validated clinical prediction.** See Section 12.4 of the manuscript ("Interpretation: An Exploratory Scaffold, Not a Predictive Model") for why the *direction* of the Monte Carlo result, not the magnitude of the NDI shift, is the finding this simulation actually supports.
 
 ---
 
 ## Paper & Data
 
-Full paper is avilable on Zenodo:
+Full paper is available on Zenodo (concept DOI, always resolves to the latest version):
 
-**DOI: [10.5281/zenodo.20945817](https://zenodo.org/records/20945817)**
+**DOI: [10.5281/zenodo.20945816](https://doi.org/10.5281/zenodo.20945816)**
 
+This code is separately deposited on Zenodo as a citable software record (concept DOI):
+
+**DOI: {{CODE_ZENODO_CONCEPT_DOI}}**
 
 ## Disclaimer
 
@@ -236,22 +244,14 @@ If you use this code, please cite:
 
 ```
 Sandler, L. (2026). Neuroinflammatory Vulnerability Windows in Trisomy 21:
-A Theoretical Framework for Extended-Interval IL-13/TSLP Biologic 
+A Theoretical Framework for Extended-Interval IL-13/TSLP Biologic
 Intervention During Fetal Neurodevelopment.
-Zenodo. DOI: [assigned upon upload]
+Zenodo. DOI: 10.5281/zenodo.20945816
 
 Sandler, L. (2026). Trisomy21-IL13-Simulation [Software].
-GitHub: https://github.com/leonsandler/trisomy21-il13-simulation
-Zenodo. DOI: [assigned upon upload]
+GitHub: https://github.com/sandlerleon/trisomy21-il13-simulation
+Zenodo. DOI: {{CODE_ZENODO_CONCEPT_DOI}}
 ```
-
----
-
-## Related Preprints by the Same Author
-
-- GaaR: Goal-Aware Adaptive Regulation in Neural Architecture Search. DOI: 10.5281/zenodo.20737711
-- SurfacePower: Graphene-Based Low-Voltage Electrical Distribution. DOI: 10.5281/zenodo.20576310
-- Topological Cooper Scaffold. DOI: 10.5281/zenodo.20821704
 
 ---
 

@@ -729,7 +729,7 @@ IMPORTANT CAVEATS
 ================================================================================
 """
 
-with open(os.path.join(OUT_DIR,'simulation_summary_v3.txt'),'w') as f:
+with open(os.path.join(OUT_DIR,'simulation_summary_v3.txt'),'w',encoding='utf-8') as f:
     f.write(summary)
 
 print(summary)
