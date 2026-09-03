@@ -1,10 +1,10 @@
 # Trisomy 21 IL-13 Blockade — Computational Simulation
 
 **Companion code to:**
-> *"Neuroinflammatory Vulnerability Windows in Trisomy 21: A Theoretical Framework for Extended-Interval IL-13/TSLP Biologic Intervention During Fetal Neurodevelopment"*
-> Leon Sandler (pen name: Leonid Sandler)
-> Zenodo Preprint, September 2026 (v4) — revised for Immunobiology major revision
-> DOI: [10.5281/zenodo.20945816](https://doi.org/10.5281/zenodo.20945816)
+> *"Neuroinflammatory Vulnerability Windows in Trisomy 21: A Hypothesis for Preclinical Investigation of IL-13/TSLP Modulation During Fetal Neurodevelopment"*
+> Leon Sandler
+> Submitted to Immunobiology (Elsevier)
+> DOI: [10.5281/zenodo.20945816](https://doi.org/10.5281/zenodo.20945816) (concept DOI, always resolves to the latest version)
 
 **Author contact:** leonsandler@alumni.swinburne.edu
 **LinkedIn:** https://www.linkedin.com/in/-leon-sandler
