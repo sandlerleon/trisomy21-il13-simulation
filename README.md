@@ -162,7 +162,7 @@ K_CL_MIC = 0.08   # → fit to microglial time-course data from Ts65Dn mice
 
 **Step 4 — Rerun and compare**
 ```bash
-python Trisomy21_PBPK_Simulation_v2.py
+python "Trisomy21 PBPK Simulation v3.py"
 ```
 Compare output figures with experimental curves to validate model fit.
 
@@ -222,7 +222,7 @@ Full paper is available on Zenodo (concept DOI, always resolves to the latest ve
 
 This code is separately deposited on Zenodo as a citable software record (concept DOI):
 
-**DOI: {{CODE_ZENODO_CONCEPT_DOI}}**
+**DOI: [10.5281/zenodo.22263958](https://doi.org/10.5281/zenodo.22263958)**
 
 ## Disclaimer
 
@@ -250,7 +250,7 @@ Zenodo. DOI: 10.5281/zenodo.20945816
 
 Sandler, L. (2026). Trisomy21-IL13-Simulation [Software].
 GitHub: https://github.com/sandlerleon/trisomy21-il13-simulation
-Zenodo. DOI: {{CODE_ZENODO_CONCEPT_DOI}}
+Zenodo. DOI: [10.5281/zenodo.22263958](https://doi.org/10.5281/zenodo.22263958)
 ```
 
 ---
