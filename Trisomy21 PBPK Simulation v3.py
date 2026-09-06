@@ -57,6 +57,9 @@ from datetime import datetime
 
 warnings.filterwarnings('ignore')
 OUT_DIR = os.path.dirname(os.path.abspath(__file__))
+# Filename matches the summary file attached to the submission, so re-running the
+# model overwrites it in place rather than leaving a stale duplicate alongside.
+SUMMARY_NAME = 'simulation summary v3.txt'
 
 # ── Colour palette ──────────────────────────────────────────────────────────
 C = {
@@ -241,15 +244,22 @@ def full_odes(t, y, t_eval, fetal_conc, t21, treated):
 
     # Downstream neurodevelopmental markers
     # Synaptic density: driven by synaptogenesis, inhibited by IL-13 and microglial pruning
-    syn_loss = K_SYN_IL13 * il13 + K_SYN_MIC * mic
-    d_syn    = syn_base - syn_loss - K_SYN_RES * syn
+    # Loss is first-order in `syn`: inflammatory pruning acts on synapses that exist,
+    # so the rate scales with current density. (A zeroth-order loss term drives syn
+    # through zero into negative, non-physical values; the steady state assumed by the
+    # initial condition in run_full() is the first-order one, so this restores internal
+    # consistency between the initial condition and the derivative.)
+    syn_loss_rate = K_SYN_IL13 * il13 + K_SYN_MIC * mic
+    d_syn         = syn_base - (syn_loss_rate + K_SYN_RES) * syn
 
     # Oligodendrocyte maturation: driven by OPC maturation, inhibited by IL-13 and mic activation
     # Myelination is gated by gestational age (window III: weeks 28–36)
     week = t / 7.0
     myelination_gate = np.clip((week - 20) / 16.0, 0, 1)  # ramps from wk20 to wk36
-    oli_inhibition   = (K_OLI_IL13 * il13 + K_OLI_MIC * mic) * myelination_gate
-    d_oli = oli_base * myelination_gate - oli_inhibition - K_OLI_RES * oli
+    # As for synaptic density, inhibition is first-order in `oli` so the maturation
+    # index cannot become negative.
+    oli_inhib_rate = (K_OLI_IL13 * il13 + K_OLI_MIC * mic) * myelination_gate
+    d_oli = oli_base * myelination_gate - (oli_inhib_rate + K_OLI_RES) * oli
 
     d_reserved = 0.0
 
@@ -729,7 +739,7 @@ IMPORTANT CAVEATS
 ================================================================================
 """
 
-with open(os.path.join(OUT_DIR,'simulation_summary_v3.txt'),'w',encoding='utf-8') as f:
+with open(os.path.join(OUT_DIR, SUMMARY_NAME),'w',encoding='utf-8') as f:
     f.write(summary)
 
 print(summary)

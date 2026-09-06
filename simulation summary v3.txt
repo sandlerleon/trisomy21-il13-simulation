@@ -1,7 +1,7 @@
 
 ================================================================================
 SIMULATION SUMMARY v3.0 — Trisomy 21 IL-13 Blockade Framework
-Run: 2026-06-26 18:00:40
+Run: 2026-09-06 13:50:21
 ================================================================================
 
 PHARMACOKINETIC RESULTS
@@ -28,29 +28,29 @@ DOWNSTREAM NEURODEVELOPMENTAL MARKERS
 ────────────────────────────────────────────────────────────────────────────────
 SYNAPTIC DENSITY INDEX (mean, normalised):
 Period          Euploid    T21 Untreated    T21 Treated    Gain
-Window I:       10.164      -1.428            -1.421          0.0%
-Window II:      10.193      -6.225            -4.967          0.0%
-Window III:     10.192      -6.239            -1.383          0.0%
-Overall:        10.187      -5.004            -2.452          0.0%
+Window I:       2.036      0.880            0.881          0.1%
+Window II:      1.790      0.702            0.751          6.9%
+Window III:     1.790      0.702            0.912          29.9%
+Overall:        1.851      0.747            0.860          15.0%
 
 OLIGODENDROCYTE MATURATION INDEX (mean, normalised):
-Window III:     4.101      -10.339            -5.449          0.0%
-Overall:        2.054      -5.177            -2.446          0.0%
+Window III:     1.287      0.500            0.661          32.3%
+Overall:        0.714      0.288            0.372          29.1%
 
 COMPOSITE NEURODEVELOPMENTAL INDEX (NDI, euploid = 100)
 ────────────────────────────────────────────────────────────────────────────────
 Period          Euploid    T21 Untreated    T21 Treated    Δ NDI
-Window I:       100.0       17.4             17.4           +0.0
-Window II:      100.0       0.0             0.0           +0.0
-Window III:     100.0       0.0             1.1           +1.1
-Overall:        100.0       5.0             7.2           +2.2
+Window I:       100.0       30.2             30.2           +0.0
+Window II:      100.0       7.6             13.8           +6.3
+Window III:     100.0       5.1             30.2           +25.1
+Overall:        100.0       13.9             27.1           +13.2
 
 SENSITIVITY ANALYSIS (Monte Carlo n=100, ±20–25% variation in 8 parameters)
 ────────────────────────────────────────────────────────────────────────────────
 Microglial reduction positive across ALL samples: YES ✓
 NDI improvement positive across ALL samples:      YES ✓
-Treated NDI 90% CI (overall mean):               [2.4, 14.9]
-Untreated NDI 90% CI (overall mean):             [2.2, 9.1]
+Treated NDI 90% CI (overall mean):               [16.5, 38.8]
+Untreated NDI 90% CI (overall mean):             [6.7, 26.7]
 
 RECOMMENDED PAPER WORDING (per reviewer suggestion)
 ────────────────────────────────────────────────────────────────────────────────
